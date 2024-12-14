@@ -29,14 +29,13 @@ ACCESS_TOKEN=seu_token_de_acesso
 CSRF_TOKEN=seu_token_CSRF
 SHAREPOINT='url_do_sharepoint'
 USERS='{
-    "Eliezer Azevedo": "Novo agente (Eliezer Azevedo)",
-    "Evandro Santos": "Novo agente (Evandro Santos)",
-    "Geovanio Rodrigues": "Novo agente (Geovanio Rodrigues)",
-    "Hygor Fernando": "Novo agente (Hygor Fernando)",
-    "Julio Cesar": "Novo agente (Julio Cesar)",
-    "Leandro Milhomens": "Novo agente (Leandro Milhomens)",
-    "Lucas Ramos": "Novo agente (Lucas Ramos)",
-    "Renato Oliveira": "Novo agente (Renato Oliveira)"
+    "Usuario1": "Novo agente (Usuario1)",
+    "Usuario2": "Novo agente (Usuario2)",
+    "Usuario3": "Novo agente (Usuario3)",
+    "Usuario4": "Novo agente (Usuario4)",
+    "Usuario5": "Novo agente (Usuario5)",
+    "Usuario6": "Novo agente (Usuario6)",
+    "Usuario7": "Novo agente (Usuario7)"
 }'
 ```
 
