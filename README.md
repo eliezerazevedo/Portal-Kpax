@@ -1,7 +1,7 @@
 
 # Portal-Kpax
 
-Portal para gerar agentes no sistema Kpax ACD-INC.
+Portal para gerar agentes no sistema Kpax ACD-INC. Com isso, é possível agilizar os processos de geração de instaladores e criar relatórios de instalação por técnicos.
 
 ## Instruções para Execução via Docker
 
