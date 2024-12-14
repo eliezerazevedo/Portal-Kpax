@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  portal-tecnico:
+    build: .
+    container_name: portal_tecnico
+    ports:
+      - "5555:5555"
+    environment:
+      - API_URL=${API_URL}
+      - ACCESS_TOKEN=${ACCESS_TOKEN}
+      - CSRF_TOKEN=${CSRF_TOKEN}
+      - USERS=${USERS}
+      - SHAREPOINT=${SHAREPOINT}
+    volumes:
+      - .:/app
+    networks:
+      - flask_network
+    restart: always
+    deploy:
+      resources:
+        limits:
+          memory: 512M  # Limite de memória
+          cpus: '1.0'   # Limite de CPU (1.0 significa um único núcleo de CPU)
+
+networks:
+  flask_network:
+    driver: bridge

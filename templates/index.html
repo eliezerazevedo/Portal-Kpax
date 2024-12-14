@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Técnico Print Master</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; 
+        script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://static.cloudflareinsights.com; 
+        style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; 
+        img-src 'self' data:; font-src 'self' https://cdn.jsdelivr.net; object-src 'none'; 
+        connect-src 'self'; base-uri 'self'; form-action 'self';">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="description" content="Portal Técnico Print Master: Download de instaladores e acesso ao repositório de arquivos técnicos.">
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+
+        main {
+            min-height: 80vh;
+            padding-bottom: 120px;
+        }
+
+        footer {
+            position: relative;
+            width: 100%;
+            bottom: 0;
+        }
+
+        header {
+            background-color: #00796b; /* Verde mais escuro para maior contraste */
+            color: white;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            font-size: 2rem;
+        }
+
+        .btn-block {
+            width: 100%;
+        }
+
+        .btn-success, .btn-primary, .btn-secondary {
+            font-size: 1.1rem;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        .alert {
+            font-size: 1.2rem;
+        }
+
+        /* Ajustes para melhorar o contraste da alerta */
+        .alert-warning {
+            background-color: #ffeb3b; /* Amarelo mais forte */
+            color: #000000; /* Texto preto para maior contraste */
+        }
+
+        /* Alerta Danger com melhor contraste */
+        .alert-danger {
+            background-color: #e53935; /* Vermelho mais forte */
+            color: #ffffff; /* Texto branco para maior contraste */
+        }
+
+        /* Alterando o texto do rodapé para maior contraste */
+        footer {
+            background-color: #f8f9fa; /* Cor de fundo mais forte e contraste melhor */
+            color: #333333; /* Texto escuro */
+        }
+
+        @media (max-width: 767px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container text-center">
+            <h1>Portal Técnico Print Master</h1>
+        </div>
+    </header>
+
+    <main class="container mt-5">
+        <div class="alert alert-warning" role="alert">
+            Para fazer o download, identifique-se clicando no seu nome para gerar o instalador.
+        </div>
+        <div class="alert alert-danger" role="alert">
+            Atenção: Isso contribui para a pontuação de instalações e o acompanhamento de cada técnico.
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            {% for name, label in users.items() %}
+            <div class="col">
+                <a href="{{ url_for('download', name=name) }}" class="btn btn-success btn-block">{{ name }}</a>
+            </div>
+            {% endfor %}
+            <div class="col-md-12 mt-4">
+                <a href="{{ url_for('sharepoint') }}" target="_blank" class="btn btn-primary btn-block">Repositório Técnico de Arquivos</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-light py-4">
+        <div class="container text-center">
+            <p>&copy; <span id="current-year"></span> Portal Técnico Print Master - Portal desenvolvido por <a href="https://www.linkedin.com/in/eliezerazevedo/" target="_blank">Eliezer Azevedo</a></p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Definir o ano atual dinamicamente
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
